@@ -3,9 +3,9 @@ import os
 from cv2 import cv2
 import torchvision
 # input_path
-img_path = r'C:\Users\Allen\Desktop\1'
+img_path = r'D:\Dataset\defect_detection\choose_2\train\4'
 # output_path
-out_path = r'C:\Users\Allen\Desktop\1'
+out_path = r'D:\Dataset\defect_detection\choose_2\train\4'
 
 def sharpen(img, sigma):    
     # sigma = 5、15、25
