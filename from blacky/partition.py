@@ -2,17 +2,19 @@ import os, shutil, glob, random
 # 定義資料集名稱
 sets = ['train', 'val', 'test']
 # 訓練集佔整體資料集比例
-train_percent = 0.875
+# train_percent = 0.9
+train_percent = 0.8571428571428571
 # 驗證集佔整體資料集比例
-val_percent = 0
+# val_percent = 0
+val_percent = 0.1428571429
 # 測試集佔整體資料集比例
-test_percent = 0.125
+test_percent = 0
 # 原始資料集所在的路徑
-original_dataset_dir = r'D:\Dataset\simpson\dataset\train\characters-20'
+original_dataset_dir = r'D:\Github\BlackyYen\BlackyYen-public\machine_learning\Classification\ntut-ml-2020-classification\simpsons\train'
 # 用來儲存新資料集的位置
-base_dir = r'D:\Dataset\simpson\151'
+base_dir = r'D:\training_dataset\simpsons_dataset_02'
 # 原始資料集相同的圖片名稱
-picname = 'pic'
+image_name = 'pic'
 
 val_percent = val_percent / (val_percent + test_percent)
 test_percent = 1
@@ -35,9 +37,8 @@ for i in fileLists:
             os.mkdir(class_path)
         # 查詢單一種類樣本數量
         if switch:
-            # 如果沒有picname，必須視情況把picname更改為其他圖片檔名
             dirPathPattern = os.path.join(original_dataset_dir, i,
-                                          str(picname + '*'))
+                                          str(image_name + '*'))
             sample = glob.glob(dirPathPattern)
             switch = False
         sample_number = int(len(sample) * dataset_percent[sets.index(j)])

@@ -5,6 +5,9 @@ from PIL import Image
 import numpy as np
 import argparse
 
+#每幾度轉一次
+angle = 45
+
 # 定义旋转rotate函数
 def rotate(image, angle, center=None, scale=1.0):
     # 获取图像尺寸
@@ -22,9 +25,9 @@ def rotate(image, angle, center=None, scale=1.0):
     return rotated
 
 # input_path
-img_path = r'D:\GitHub\t109318121\ML_Classification\resize\test'  # 輸入路徑 
+img_path = r'D:\Dataset\defect_detection\thisone\5'  # 輸入路徑 
 # output_path
-out_path = r'D:\GitHub\t109318121\ML_Classification\rotate\test'
+out_path = r'D:\Dataset\defect_detection\thisone\5'
 
 for item in os.listdir(img_path):
     # 提取路徑名稱
@@ -35,8 +38,8 @@ for item in os.listdir(img_path):
 
     img=cv2.imread(path_com)
         
-    for i in range(-3,4):
-        img_rotate = rotate(img , i * 15)  # 15°旋轉一次
+    for i in range(0,8):
+        img_rotate = rotate(img , i * angle)  # N°旋轉一次
         # cv2.imshow('0',img_rotate)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
