@@ -7,7 +7,6 @@ Created on Tue Oct 20 15:40:08 2020
 
 import os
 import sys
-
 from PIL import Image
 
 input_folder=r'C:/Users/Allen/Desktop/choose/3/1'   #輸入資料夾，包含.png格式圖片

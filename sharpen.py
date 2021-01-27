@@ -2,9 +2,8 @@
 import os
 from cv2 import cv2
 import torchvision
-# input_path
+
 img_path = r'D:\Dataset\defect_detection\choose_2\train\4'
-# output_path
 out_path = r'D:\Dataset\defect_detection\choose_2\train\4'
 
 def sharpen(img, sigma):    
@@ -22,6 +21,7 @@ for item in os.listdir(img_path):
 
     img=cv2.imread(path_com)
     
+    # 銳利化一次
     for j in range(1,2):
         sigma=50
         sharp_1 = sharpen(img, sigma)
@@ -30,8 +30,8 @@ for item in os.listdir(img_path):
         print(newNameTotal)
         cv2.imwrite(newNameTotal, sharp_1)
 
+        # 銳利化兩次
         for i in range(1 , 2):
-            # horizontal_img=cv2.flip(img,i)
             sigma=(50*i)
             sharp_2 = sharpen(sharp_1, sigma)
             newName = os.path.join(out_path, file_name)

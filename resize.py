@@ -9,9 +9,7 @@ import numpy as np
 import cv2
 
 def main():
-    # input_path
     img_path = r'C:\Users\Allen\Desktop\choose'
-    # output_path
     out_path = r'C:\Users\Allen\Desktop\choose\resize'
     # mode == 1 補值
     # mode == 2 線性插植
@@ -40,7 +38,7 @@ def resize_keep_aspectratio(image_src):
     src_h, src_w = image_src.shape[:2]
     print(src_h, src_w)
     dst_h, dst_w = dst_size
-    # 判断应该按哪个边做等比缩放
+    # 判斷應該按一下邊做等比縮放
     h = dst_w * (float(src_h)/src_w)  # 按照ｗ做等比缩放
     w = dst_h * (float(src_w)/src_h)  # 按照h做等比缩放
     h = int(h)
@@ -64,8 +62,8 @@ def resize_keep_aspectratio(image_src):
 
 def cv_imread(filePath):
     cv_img=cv2.imdecode(np.fromfile(filePath,dtype=np.uint8),-1)
-    ## imdecode读取的是rgb，如果后续需要opencv處理的话，需要轉换成bgr，轉换后图片颜色会变化
-    ##cv_img=cv2.cvtColor(cv_img,cv2.COLOR_RGB2BGR)
+    ## imdecode讀取的是rgb，如果後續需要opencv處理的話，需要轉換成bgr，轉換後圖片顏色會變化
+    ## cv_img = cv2.cvtColor（cv_img，cv2.COLOR_RGB2BGR）
     return cv_img
 
 if __name__ == '__main__':

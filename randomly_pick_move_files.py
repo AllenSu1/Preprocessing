@@ -1,20 +1,20 @@
-##深度学习过程中，需要制作训练集和验证集、测试集。
-# 將filePath檔案下的圖片儲存在newFilePath資料夾下的相應子資料夾中
-# pic 是字典，存放每個圖片要移到的子資料夾名
+## 深度學習過程中，需要製作訓練集和驗證集，測試集
+## 將filePath檔案下的圖片儲存在newFilePath資料夾下的相應子資料夾中
+## pic是字典，存放每個圖片要移到的子資料夾名
 
 import os, random, shutil
 def moveFile(fileDir):
-        pathDir = os.listdir(fileDir)    #取图片的原始路径
+        pathDir = os.listdir(fileDir)    # 取圖片的原始路徑
         filenumber=len(pathDir)
-        rate=0.1    #自定义抽取图片的比例，比方说100张抽10张，那就是0.1
-        picknumber=int(filenumber*rate) #按照rate比例从文件夹中取一定数量图片
-        sample = random.sample(pathDir, picknumber)  #随机选取picknumber数量的样本图片
+        rate=0.1    # 抽取圖片比例
+        picknumber=int(filenumber*rate) # 按照rate比例從文件夾中取一定數量圖片
+        sample = random.sample(pathDir, picknumber)  # 隨機選取picknumber數量的樣本圖片
         print (sample)
         for name in sample:
                 shutil.move(fileDir+name, tarDir+name)
         return
 
 if __name__ == '__main__':
-	fileDir = "D:/Dataset/defect_detection/choose_2/train/5/"    #源图片文件夹路径
-	tarDir = r'D:\\Dataset\\defect_detection\\choose_2\\val\\5\\'    #移动到新的文件夹路径
+	fileDir = "D:/Dataset/defect_detection/choose_2/train/5/"    # 原圖片文件夾路徑
+	tarDir = r'D:\\Dataset\\defect_detection\\choose_2\\val\\5\\'    # 移動到新的文件夾路徑
 	moveFile(fileDir)

@@ -3,7 +3,6 @@ import os
 
 path = r'C:\Users\Allen\Desktop\1'
 
-
 def batch_rename(path):
     count = 1
     for fname in os.listdir(path):
@@ -12,6 +11,5 @@ def batch_rename(path):
         os.rename(os.path.join(path, fname), os.path.join(path, new_fname))
         print(os.path.join(path, new_fname))
         count = count + 1
-
 
 batch_rename(path)

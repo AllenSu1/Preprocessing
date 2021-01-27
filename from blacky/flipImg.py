@@ -3,9 +3,7 @@
 import os
 from cv2 import cv2
 
-# input_path
 img_path = r'D:\Dataset\defect_detection\train\0'
-# output_path
 out_path = r'D:\Dataset\defect_detection\thisone\0'
 
 for item in os.listdir(img_path):

@@ -8,25 +8,23 @@ import argparse
 #每幾度轉一次
 angle = 45
 
-# 定义旋转rotate函数
+# 定義旋轉rotate函數
 def rotate(image, angle, center=None, scale=1.0):
-    # 获取图像尺寸
+    # 獲取圖像尺寸
     (h, w) = image.shape[:2]
  
-    # 若未指定旋转中心，则将图像中心设为旋转中心
+    # 若未指定旋轉中心，則將圖像中心設為旋轉中心
     if center is None:
         center = (w / 2, h / 2)
  
-    # 执行旋转
+    # 執行旋轉
     M = cv2.getRotationMatrix2D(center, angle, scale)
     rotated = cv2.warpAffine(image, M, (w, h))
  
-    # 返回旋转后的图像
+    # 返迴旋轉後的圖像
     return rotated
 
-# input_path
 img_path = r'D:\Dataset\defect_detection\thisone\5'  # 輸入路徑 
-# output_path
 out_path = r'D:\Dataset\defect_detection\thisone\5'
 
 for item in os.listdir(img_path):
@@ -40,9 +38,6 @@ for item in os.listdir(img_path):
         
     for i in range(0,8):
         img_rotate = rotate(img , i * angle)  # N°旋轉一次
-        # cv2.imshow('0',img_rotate)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
         newname = os.path.join(out_path, file_name + '_rotate' + str("_") + str((i)*15) + '.jpg')
         print(newname)
         cv2.imwrite(newname , img_rotate)
