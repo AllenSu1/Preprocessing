@@ -3,9 +3,9 @@ import os
 from cv2 import cv2
 
 # 輸入分類資料夾路徑
-img_path = r'D:\Dataset\defect_detection\train'
+img_path = r'C:\Users\Allen\Desktop\project1'
 # 輸出分類資料夾路徑
-out_path = r'D:\Dataset\defect_detection\train'
+out_path = r'C:\Users\Allen\Desktop\ttt'
 classes = os.listdir(img_path)
 
 method='_flip_type'
