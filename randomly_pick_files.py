@@ -6,7 +6,7 @@ def copyFile(fileDir):
 
     pathDir = os.listdir(fileDir)
 
-    sample = random.sample(pathDir, 10000)
+    sample = random.sample(pathDir, 100)
     print(sample)
 
     for name in sample:
@@ -15,5 +15,5 @@ def copyFile(fileDir):
 
 if __name__ == '__main__':
     fileDir = "D:/Dataset/Allen_thesis/vannamei/vannamei_v1/image/"
-    tarDir = 'D:/Dataset/Allen_thesis/vannamei/vannamei_v1/xml/'
+    tarDir = 'E:/test/'
     copyFile(fileDir)
