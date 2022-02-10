@@ -23,7 +23,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-fileDir = r"D:\Dataset\Allen_thesis\vannamei\vannamei_v1\image"
+fileDir = r"D:\Dataset\Allen_thesis\vanamei_demo"
 pathDir = os.listdir(fileDir)
 
 # 畫出 RGB 三種顏色的分佈圖
