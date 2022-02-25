@@ -18,7 +18,7 @@ def copyFile(fileDir, xmlDir, tarDir):
 
 
 if __name__ == '__main__':
-    fileDir = "D:/Dataset/Allen_thesis/vannamei/vannamei_v1/image/"
+    fileDir = "D:/Dataset/VOC2007/JPEGImages/"
     xmlDir = "D:/Dataset/Allen_thesis/vannamei/vannamei_monkey/pic_black_all_label/"
-    tarDir = 'D:/Dataset/Allen_thesis/vannamei/vannamei_v1/xml/'
+    tarDir = 'D:/Dataset/VOC2007/Annotations/'
     copyFile(fileDir, xmlDir, tarDir)
