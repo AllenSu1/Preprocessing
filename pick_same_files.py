@@ -1,4 +1,4 @@
-# 複製資料夾下檔案對應的xml到另個資料夾
+# 複製(移動)資料夾下檔案對應的xml到另個資料夾
 import os, random, shutil
 from pathlib import Path
 
@@ -24,13 +24,13 @@ if __name__ == '__main__':
     xmlDir = "D:/Dataset/Train/VOC2007/Annotations/"
     tarDir = 'D:/Dataset/Test/VOC2007/Annotations/'
 
-    # 執行 複製資料夾下檔案對應的xml到另個資料夾
+    # 執行 複製(移動)資料夾下檔案對應的xml到另個資料夾
     copyFile(fileDir, xmlDir, tarDir)
 
     jpgFile = os.listdir(fileDir)
     xmlFile = os.listdir(tarDir)
 
-    # 以下為檢驗部分 確認複製的檔案是否對應
+    # 以下為檢驗部分 確認複製(移動)的檔案是否對應
     error = 0
     for i in range(len(jpgFile)):
         jpgFile[i] = os.path.splitext(jpgFile[i])[0]
