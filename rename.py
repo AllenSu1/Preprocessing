@@ -1,14 +1,17 @@
-# 改檔名從一開始編號
+# 更改資料夾下檔案名稱
 import os
 
-path = r'D:\Dataset\白蝦蝦苗\072921增耿\每一個frame\video3'
+path = r'D:\dataset'  # 更名
+filename = ''  # 檔案名稱
+file_extension = '.jpg'  # 儲存
 
 
+# 從1開始編號
 def batch_rename(path):
     count = 1
     for fname in os.listdir(path):
         # print(os.path.join(path, fname))
-        new_fname = str(count) + '.jpg'
+        new_fname = filename + str(count) + file_extension
         os.rename(os.path.join(path, fname), os.path.join(path, new_fname))
         print(os.path.join(path, new_fname))
         count = count + 1
