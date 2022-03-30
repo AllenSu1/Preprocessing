@@ -7,7 +7,7 @@ def copyFile(fileDir, xmlDir, tarDir):
     '''
     fileDir是獲取檔名的路徑
     xmlDir是fileDir所對應檔案的路徑
-    tarDir複製檔案的路徑
+    tarDir複製(移動)檔案的路徑
     '''
 
     pathDir = os.listdir(fileDir)
@@ -15,13 +15,14 @@ def copyFile(fileDir, xmlDir, tarDir):
 
     for name in pathDir:
         name = os.path.splitext(name)[0] + '.xml'
-        shutil.copyfile(xmlDir + name, tarDir + name)
+        # shutil.copyfile(xmlDir + name, tarDir + name) # 複製
+        shutil.move(xmlDir + name, tarDir + name)  # 移動
 
 
 if __name__ == '__main__':
-    fileDir = "D:/Dataset/VOC2007/JPEGImages/"
-    xmlDir = "D:/Dataset/Annotations/"
-    tarDir = 'D:/Dataset/VOC2007/Annotations/'
+    fileDir = "D:/Dataset/Test/VOC2007/JPEGImages/"
+    xmlDir = "D:/Dataset/Train/VOC2007/Annotations/"
+    tarDir = 'D:/Dataset/Test/VOC2007/Annotations/'
 
     # 執行 複製資料夾下檔案對應的xml到另個資料夾
     copyFile(fileDir, xmlDir, tarDir)
