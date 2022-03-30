@@ -1,20 +1,22 @@
+# 分類模型之資料集切分
 import os, shutil, glob, random
+
 # 定義資料集名稱
 sets = ['train', 'val', 'test']
 # 訓練集佔整體資料集比例
 # train_percent = 0.9
-train_percent = 0.8571428571428571
+train_percent = 0.8
 # 驗證集佔整體資料集比例
 # val_percent = 0
-val_percent = 0.1428571429
+val_percent = 0.1
 # 測試集佔整體資料集比例
-test_percent = 0
+test_percent = 0.1
 # 原始資料集所在的路徑
-original_dataset_dir = r'D:\Github\BlackyYen\BlackyYen-public\machine_learning\Classification\ntut-ml-2020-classification\simpsons\train'
+original_dataset_dir = r'D:\dataset'  # 存放各類資料集之檔案路徑
 # 用來儲存新資料集的位置
-base_dir = r'D:\training_dataset\simpsons_dataset_02'
+base_dir = r'D:\dataset\partition'
 # 原始資料集相同的圖片名稱
-image_name = 'pic'
+image_name = ''
 
 val_percent = val_percent / (val_percent + test_percent)
 test_percent = 1
